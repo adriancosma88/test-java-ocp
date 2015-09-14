@@ -6,8 +6,7 @@ public class ThreadTest {
 		 * Always watch for () in an Inner Class instantiation.
 		 * 
 		 */
-		System.out.println(new Runnable() {public void run() {}});
-		
+		System.out.println(new Runnable() {public void run() {}});		
 		
 		/**
 		 * Thread priorities
@@ -42,6 +41,18 @@ public class ThreadTest {
 		 * -----
 		 * join() throws InterrupedException, thus it must ALWAYS
 		 * handle or throw this exception
+		 * 
+		 *  ----- 
+		 * terminate() is not a method of the Thread class.
+		 * 
+		 * -----
+		 * wait() and notify() do NOT prevent deadlock.
+		 * 
+		 * -----
+		 * Calling start() the second time on a thread, will throw
+		 * a IllegalThreadStateException.
+		 * 
+		 * 
 		 * 
 		 */
 	}

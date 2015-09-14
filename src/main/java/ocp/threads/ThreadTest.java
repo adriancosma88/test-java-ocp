@@ -2,6 +2,10 @@ package ocp.threads;
 
 public class ThreadTest {
 	public static void main (String ... args) {
+		/**
+		 * Always watch for () in an Inner Class instantiation.
+		 * 
+		 */
 		System.out.println(new Runnable() {public void run() {}});
 		
 		

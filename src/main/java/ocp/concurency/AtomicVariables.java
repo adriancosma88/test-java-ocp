@@ -1,4 +1,4 @@
-package ocp.threads;
+package ocp.concurency;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;

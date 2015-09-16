@@ -1,6 +1,7 @@
 package ocp.io;
 
 import java.io.IOException;
+import java.nio.file.DirectoryStream;
 import java.nio.file.FileSystems;
 import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
@@ -11,6 +12,7 @@ import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
 
 public class VisitFiles extends SimpleFileVisitor<Path>{
+	
 	@Override
 	public FileVisitResult visitFile(Path file, BasicFileAttributes attrs)
 			throws IOException {
@@ -40,6 +42,23 @@ public class VisitFiles extends SimpleFileVisitor<Path>{
 	}
 	
 	public static void main(String[] args) {
+		/**
+		 * DirectoryStream 
+		 */			
+		try {
+			DirectoryStream<Path> driStream = Files.newDirectoryStream(Paths.get("MyDir"));
+			//Because it implements Iterable, I can do this:
+			for (Path path : driStream) {
+				System.out.println(path.toRealPath());
+			}
+		} catch (IOException e1) {			
+		}
+		
+		
+		
+		/**
+		 * FileVisitor 
+		 */	
 		Path startPath = Paths.get("src");
 		try {
 			Files.walkFileTree(startPath, new VisitFiles());

@@ -196,6 +196,10 @@ public class TestFiles {
 		System.out.println("---Console---");
 		
 		//Returns the system's console, if any. This object might be null.
+		/**
+		 * Using the console, might throw NullPointerException, because not 
+		 * all system can return a Console.
+		 */
 		Console console = System.console();
 		if (console != null) {			
 			String passwordString = console.readLine();

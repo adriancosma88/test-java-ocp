@@ -66,7 +66,7 @@ public class FileAttributes {
 		/**
 		 * Besides the inherited methods from BasicFileAttributes:
 		 * 
-		 * - DosFileAttributes has isHidden() and isReadOnly()
+		 * - DosFileAttributes has isArchive(), isHidden() and isReadOnly()
 		 * - PosixFileAttributes has the user rights options.
 		 */
 	}

@@ -147,5 +147,24 @@ public class PathsAndFiles {
 		Path resolvedPath = absolute.resolve(relative).resolve(file);
 		System.out.println(resolvedPath);
 		System.out.println(absolute.relativize(resolvedPath));
+		
+		/**
+		 * Real path displays the real path as displayed in the system.
+		 * If the file does not exist on the file system it will throw
+		 * an IOException, which means we have to catch this exception.
+		 */
+		Path real1 = Paths.get("realPath1.txt");
+		try {
+			System.out.println(real1.toRealPath());
+		} catch (IOException e) {
+			System.out.println("error when showing real path");
+		}
+		
+		try {
+			Files.createFile(real1);
+			System.out.println(real1.toRealPath());
+		} catch (IOException e) {
+			System.out.println("error when showing real path");
+		}
 	}
 }
